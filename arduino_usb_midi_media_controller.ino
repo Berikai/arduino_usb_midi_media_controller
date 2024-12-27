@@ -127,7 +127,6 @@ volatile int lastStateCLK; // Necessary to keep the last state of the encoder
 // Generally, we should use "unsigned long" for variables that hold time
 // The value will quickly become too large for an int to store
 unsigned long previousMillis = 0; // Stores the last update time for LED animation
-int ledIndex = 0; // Current LED index for the animation
 
 // To handle encoder double click, it will change the animation
 unsigned long encoderLastPressTime = 0;
