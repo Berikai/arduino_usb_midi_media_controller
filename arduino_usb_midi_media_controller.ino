@@ -11,7 +11,7 @@
  *
  *  
  *  
- *  Last updated: 27/12/2024 18:20
+ *  Last updated: 27/12/2024 18:24
  *
  *  Note: During the compilation process, HID-Project library prompts a pragma warning: "Using default ASCII layout for keyboard modules"
  *
@@ -453,12 +453,12 @@ void magentaAnimationLED() {
 
 // Animation 5
 void slideAnimationLED() {
-  static int position = 0;  // Current position of the block
+  static int position = 0; // Current position of the block
   static int direction = 1; // 1 = forward, -1 = backward
   int colorsCount = 5;
   static CRGB colors[] = {CRGB::Red, CRGB::Green, CRGB::Blue, CRGB::Cyan, CRGB::Magenta};
   static int colorIndex = 0;
-  int blockSize = 5;        // Number of LEDs in the sliding block
+  int blockSize = 5; // Number of LEDs in the sliding block
 
   // Clear all LEDs
   fill_solid(leds, ledCount, CRGB::Black);
