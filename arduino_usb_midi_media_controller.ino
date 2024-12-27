@@ -11,7 +11,7 @@
  *
  *  
  *  
- *  Last updated: 27/12/2024 01:13
+ *  Last updated: 27/12/2024 18:20
  *
  *  Note: During the compilation process, HID-Project library prompts a pragma warning: "Using default ASCII layout for keyboard modules"
  *
@@ -452,10 +452,32 @@ void magentaAnimationLED() {
 }
 
 // Animation 5
-void purpleAnimationLED() {
-  fill_solid(leds, ledCount, CRGB::Purple);
+void slideAnimationLED() {
+  static int position = 0;  // Current position of the block
+  static int direction = 1; // 1 = forward, -1 = backward
+  int colorsCount = 5;
+  static CRGB colors[] = {CRGB::Red, CRGB::Green, CRGB::Blue, CRGB::Cyan, CRGB::Magenta};
+  static int colorIndex = 0;
+  int blockSize = 5;        // Number of LEDs in the sliding block
 
-  // Show the LEDs
+  // Clear all LEDs
+  fill_solid(leds, ledCount, CRGB::Black);
+
+  // Light up the sliding block
+  for (int i = 0; i < blockSize; i++) {
+    int index = (position + i) % ledCount; // Wrap around if it exceeds the strip length
+    leds[index] = colors[colorIndex]; // Block color
+  }
+
+  // Move the block
+  position += direction;
+
+  // Reverse direction at the ends
+  if (position == 0 || position + blockSize >= ledCount) {
+    direction = -direction;
+    colorIndex = (colorIndex + 1) % colorsCount;
+  }
+
   FastLED.show();
 }
 
@@ -502,7 +524,7 @@ void handleLED() {
             magentaAnimationLED();
             break;
           case 5:
-            purpleAnimationLED();
+            slideAnimationLED();
             break;
           case 6:
             closeAnimationLED();
