@@ -11,7 +11,7 @@
  *
  *  
  *  
- *  Last updated: 27/12/2024 18:24
+ *  Last updated: 27/12/2024 18:41
  *
  *  Note: During the compilation process, HID-Project library prompts a pragma warning: "Using default ASCII layout for keyboard modules"
  *
@@ -29,7 +29,7 @@
  *  We have divided the code into below parts
  *    -> Import libraries
  *    -> Define macros
- *    -> Define constants: 
+ *    -> Define constants
  *    -> Define variables
  *    -> Function definitions
  *    -> setup & loop functions
