@@ -2,7 +2,7 @@
 
 This is the source code of our MIDI, Media and Volume Controller USB Device based on the Arduino Pro Micro, made as a **MCE 202** lecture project at _Izmir University of Economics_.
 
-[PROJECT PICTURE YET TO BE ADDED]
+![Device Example](https://github.com/user-attachments/assets/cdce6cdc-f0f2-4419-a1df-93067a962652)
 
 ## Requirements
 
